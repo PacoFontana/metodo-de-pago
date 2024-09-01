@@ -14,7 +14,7 @@ body {
 }
 
 .payment-button {
-    background-color: #4CAF50;
+    background-color: #00aff0;
     color: white;
     padding: 15px 20px;
     margin: 10px;
@@ -26,7 +26,7 @@ body {
 }
 
 .payment-button:hover {
-    background-color: #45a049;
+    background-color: #120884;
 }
 
 .hidden {

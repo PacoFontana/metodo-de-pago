@@ -1,25 +1,11 @@
 function payWithMercadoPago() {
-    // Aquí puedes configurar el enlace de Mercado Pago
-    const mercadoPagoLink = "https://mpago.la/1qDHTVs";
+    // Configurar el enlace de Mercado Pago con la URL de redirección
+    const mercadoPagoLink = "https://mpago.la/1qDHTVs";  // Enlace de pago de Mercado Pago
     window.location.href = mercadoPagoLink;
-    generateCode();
 }
 
 function payWithPayPal() {
-    // Aquí puedes configurar el enlace de PayPal
-    const payPalLink = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=pacopc2020@gmail.com&amount=10.00&currency_code=USD";
+    // Configurar el enlace de PayPal con la URL de redirección
+    const payPalLink = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=pacopc2020@gmail.com&amount=10.00&currency_code=USD&return=https://www.tuweb.com/success.html";
     window.location.href = payPalLink;
-    generateCode();
-}
-
-function generateCode() {
-    const date = new Date();
-    const dayNumber = date.getDate();  // Número del día
-    const currentHour = date.getHours();  // Hora actual
-
-    const code = dayNumber * currentHour;  // Código generado
-    document.getElementById('generated-code').textContent = code;
-
-    // Mostrar el contenedor del código generado
-    document.getElementById('code-container').classList.remove('hidden');
 }

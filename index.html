@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagar</title>
+    <title>Obtener acceso</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Realiza tu pago</h1>
-        <button class="payment-button" onclick="payWithMercadoPago()" target="_blank">Mercado Pago</button>
-        <button class="payment-button" onclick="payWithPayPal()" target="_blank">PayPal</button>
-        <div id="code-container" class="hidden">
-            <h2>Tu código generado:</h2>
-            <p id="generated-code"></p>
-        </div>
+        <h1>Comprar acceso</h1>
+        <button class="payment-button" onclick="payWithMercadoPago()">Mercado Pago</button>
+        <button class="payment-button" onclick="payWithPayPal()">PayPal</button>
     </div>
 
     <script src="payment.js"></script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Exitoso</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // URL del Webhook de Discord
+            const webhookURL = "https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN";
+
+            // Mensaje embed a enviar
+            const payload = {
+                embeds: [
+                    {
+                        title: "Prueba",
+                        description: "Este es un mensaje embed de prueba.",
+                        color: 3447003  // Color en formato hexadecimal (0xRRGGBB), en este caso, un azul
+                    }
+                ]
+            };
+
+            // Enviar el mensaje al Webhook
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Mensaje enviado a Discord:", data);
+            })
+            .catch(error => {
+                console.error("Error al enviar el mensaje:", error);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>¡Gracias por tu pago!</h1>
+        <p>Tu código de acceso es: <span id="generated-code"></span></p>
+    </div>
+
+    <script>
+        function generateCode() {
+            const date = new Date();
+            const dayNumber = date.getDate();  // Número del día
+            const currentHour = date.getHours();  // Hora actual
+            const code = dayNumber * currentHour;  // Código generado
+            document.getElementById('generated-code').textContent = code;
+        }
+
+        // Generar el código cuando la página se carga
+        window.onload = generateCode;
+    </script>
+</body>
+</html>
